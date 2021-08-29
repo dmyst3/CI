@@ -2,7 +2,14 @@ def call(){
 
     sh "echo " + checkout()
     sh "echo " + getTag()
-    sh "echo ${env.Test}"
+    
+    
+    if (env.Test == '') {
+        currentBuild.result = 'ABORTED'
+    } else{
+        sh "echo ${env.Test}"
+    }
+
     
 }
 
