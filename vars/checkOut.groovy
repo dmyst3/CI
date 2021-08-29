@@ -1,11 +1,10 @@
 def call(){
 
-    sh "echo " + checkout()
-    sh "echo " + getTag()
     
-    
-    if (env.Test != null) {
-        sh "echo ${env.Test}"
+    if (env.AppName != null) {
+        sh "echo ${env.AppName}"
+        sh "echo " + checkout(env.AppName)
+        sh "echo " + getTag()
     } else{
         currentBuild.result = 'ABORTED'
     }
@@ -13,8 +12,8 @@ def call(){
     
 }
 
-def checkout(){
-    return "echo Hello from Checkout"
+def checkout(String AppName){
+    return "echo Hello from Checkout step on " + AppName
 
 }
 
