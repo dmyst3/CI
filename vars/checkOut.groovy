@@ -4,10 +4,10 @@ def call(){
     sh "echo " + getTag()
     
     
-    if (env.Test == 'null') {
-        currentBuild.result = 'ABORTED'
-    } else{
+    if (env.Test.length() > 1 ) {
         sh "echo ${env.Test}"
+    } else{
+        currentBuild.result = 'ABORTED'
     }
 
     
