@@ -7,7 +7,7 @@ def call(){
         sh "echo ${env.AppName}"
         sh "echo " + checkout(env.AppName)
         sh "echo " + getTag()
-        sh "echo " + pipelineID
+        sh "echo ${env.pipelineID}"
     } else{
         currentBuild.result = 'ABORTED'
     }
