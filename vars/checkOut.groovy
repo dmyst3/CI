@@ -1,3 +1,6 @@
+
+
+//Define function
 def call(){
 
     if (env.AppName != null) {
@@ -9,6 +12,18 @@ def call(){
     }
 
 }
+
+
+
+
+
+//Define logging
+
+//Define consumer info
+
+//Define Notification
+
+
 
 def checkout(String AppName){
     return "echo Hello from Checkout step on " + AppName
